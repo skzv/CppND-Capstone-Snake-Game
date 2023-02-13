@@ -33,6 +33,9 @@ In this project, you can build your own C++ application or extend this Snake gam
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
 
+## Acknowledgements
+* `FindSDL2_ttf.cmake` taken from [here](https://github.com/tcbrindle/sdl2-cmake-scripts/blob/master/FindSDL2_ttf.cmake)
+* Instructions from using the above script found [here](https://github.com/tcbrindle/sdl2-cmake-scripts)
 
 ## CC Attribution-ShareAlike 4.0 International
 
