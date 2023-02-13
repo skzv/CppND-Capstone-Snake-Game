@@ -143,10 +143,10 @@ void Game::Update() {
     int new_y = static_cast<int>(snake->head_y);
 
     // Check if there's food over here
-    for (auto& food : food) {
-      if (food.x == new_x && food.y == new_y) {
+    for (auto& single_food : food) {
+      if (single_food.x == new_x && single_food.y == new_y) {
         score++;
-        PlaceFood(food);
+        PlaceFood(single_food);
         // Grow snake and increase speed.
         snake->GrowBody();
         snake->speed += 0.02;
