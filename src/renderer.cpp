@@ -55,7 +55,7 @@ SDL_Surface* surfaceMessage =
     TTF_RenderText_Solid(Sans, "put your text here", White); 
 
 // now you can convert it into a texture
-SDL_Texture* Message = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+SDL_Texture* Message = SDL_CreateTextureFromSurface(sdl_renderer, surfaceMessage);
 
 SDL_Rect Message_rect; //create a rect
 Message_rect.x = 0;  //controls the rect's x coordinate 
@@ -74,7 +74,7 @@ Message_rect.h = 100; // controls the height of the rect
 // the crop size (you can ignore this if you don't want
 // to dabble with cropping), and the rect which is the size
 // and coordinate of your texture
-SDL_RenderCopy(renderer, Message, NULL, &Message_rect);
+SDL_RenderCopy(sdl_renderer, Message, NULL, &Message_rect);
 
 // Don't forget to free your surface and texture
 SDL_FreeSurface(surfaceMessage);
