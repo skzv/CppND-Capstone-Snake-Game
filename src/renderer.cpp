@@ -4,7 +4,6 @@
 #include <vector>
 #include <SDL.h>
 #include <fstream>
-#include <curses.h>
 
 Renderer::Renderer(const std::size_t screen_width,
   const std::size_t screen_height,
