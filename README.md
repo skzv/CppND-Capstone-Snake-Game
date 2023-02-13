@@ -58,6 +58,7 @@ You will need to install `sudo apt-get install libsdl2-ttf-dev` to run.
 ## Acknowledgements
 * `FindSDL2_ttf.cmake` taken from [here](https://github.com/tcbrindle/sdl2-cmake-scripts/blob/master/FindSDL2_ttf.cmake)
 * Instructions from using the above script found [here](https://github.com/tcbrindle/sdl2-cmake-scripts)
+* SDL text implementation inspired by [this](https://stackoverflow.com/questions/22886500/how-to-render-text-in-sdl2)
 * SDL audio implementation inspired by [this](https://gist.github.com/armornick/3447121)
 * Soundtrack:
 Aggressive Computer Gaming | ENIGMA by Alex-Productions | https://onsound.eu/
