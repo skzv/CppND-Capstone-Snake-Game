@@ -5,6 +5,7 @@
 #include "SDL.h"
 #include "snake.h"
 #include <memory>
+#include "SDL_ttf.h"
 
 class Renderer {
  public:
