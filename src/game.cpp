@@ -18,8 +18,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
 
   food.emplace_back(SDL_Point());
   food.emplace_back(SDL_Point());
-  PlaceFood(food[0]);
-  PlaceFood(food[1]);
+  PlaceFood(food);
 }
 
 void Game::GameOver(Controller const& controller, Renderer& renderer,
@@ -117,6 +116,12 @@ void Game::Run(Controller const& controller, Renderer& renderer,
 
 bool Game::IsGameOver() {
   return !snakes[0]->alive && !snakes[1]->alive;
+}
+
+void Game::PlaceFood() {
+  for (auto& food_item : food) {
+    PlaceFood(food_item);
+  }
 }
 
 void Game::PlaceFood(SDL_Point& food) {

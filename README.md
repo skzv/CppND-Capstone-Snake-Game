@@ -21,7 +21,8 @@ You will need to install `sudo apt-get install libsdl2-ttf-dev` to run.
 * The project uses smart pointers instead of raw pointers (e.g. game.cpp:13)
   * Snake objects are referenced via unique_ptr
 * For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object (e.g. game.cpp:16)
-* At least two variables are defined as references, or two functions use pass-by-reference in the project code (e.g. Game::PlaceFood, Snake::CheckCollision)
+* At least two variables are defined as references, or two functions use pass-by-reference in the project code (e.g. Game::PlaceFood(SDL_Point& food), Snake::CheckCollision)
+* One function is overloaded with different signatures for the same function name (e.g. Game::PlaceFood)
 * The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks (e.g. Audio.h/Audio.cpp)
 * All class data members are explicitly specified as public, protected, or private (e.g. Audio.h/Audio.cpp)
 * The project follows the Resource Acquisition Is Initialization pattern where appropriate, by allocating objects at compile-time, initializing objects when they are declared, and utilizing scope to ensure their automatic destruction.

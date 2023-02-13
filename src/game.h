@@ -27,6 +27,7 @@ private:
   std::uniform_int_distribution<int> random_h;
 
   bool IsGameOver();
+  void PlaceFood();
   void PlaceFood(SDL_Point& food);
   void Update();
 };
