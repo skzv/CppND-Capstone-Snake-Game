@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 #include <SDL.h>
-#include <filesystem>
 #include <fstream>
 #include <curses.h>
 
