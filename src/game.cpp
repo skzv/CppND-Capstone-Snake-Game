@@ -35,7 +35,7 @@ void Game::GameOver(Controller const& controller, Renderer& renderer,
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
-    controller.HandleInputGameOver(running);
+    //controller.HandleInputGameOver(running);
     Update();
     renderer.RenderGameOver();
 
