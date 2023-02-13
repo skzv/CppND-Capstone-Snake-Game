@@ -112,10 +112,10 @@ void Renderer::Render(std::vector<std::unique_ptr<Snake>> const& snakes, std::ve
   }
 
   // Render food
-  for (auto const& food : food) {
+  for (auto const& food_item : food) {
     SDL_SetRenderDrawColor(sdl_renderer, 0xFF, 0xCC, 0x00, 0xFF);
-    block.x = food.x * block.w;
-    block.y = food.y * block.h;
+    block.x = food_item.x * block.w;
+    block.y = food_item.y * block.h;
     SDL_RenderFillRect(sdl_renderer, &block);
   }
 
