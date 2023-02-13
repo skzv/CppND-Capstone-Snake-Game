@@ -41,7 +41,7 @@ Renderer::~Renderer() {
 }
 
 void Renderer::RenderGameOver() {
-  this opens a font style and sets a size
+// this opens a font style and sets a size
 TTF_Font* Sans = TTF_OpenFont("Sans.ttf", 24);
 
 // this is the color in rgb format,
