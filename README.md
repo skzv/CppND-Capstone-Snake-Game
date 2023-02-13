@@ -1,12 +1,24 @@
-# CPPND: Capstone Snake Game Example
+# 2-Snake
 
-This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+This is my Capstone project for the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213).
 
-<img src="snake_game.gif"/>
+The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
 
-The Capstone Project gives you a chance to integrate what you've learned throughout this program. This project will become an important part of your portfolio to share with current and future colleagues and employers.
+<img src="2-snake.gif"/>
 
-In this project, you can build your own C++ application or extend this Snake game, following the principles you have learned throughout this Nanodegree Program. This project will demonstrate that you can independently create applications using a wide range of C++ features.
+The game is a twist on the classic game of Snake. In this version, there are two snakes, not one. A snake will die when it runs into its own tail or the other snake. The score is the minimum of either snake's size - this encourages you to play with both snakes, not just one.
+
+## Rubric Points Addressed
+* The project uses multiple threads in the execution (main.cpp:22)
+  * Audio is run in a seperate thread
+* The project uses smart pointers instead of raw pointers (e.g. game.cpp:13)
+  * Snake objects are referenced via unique_ptr
+* For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object (e.g. game.cpp:16)
+* At least two variables are defined as references, or two functions use pass-by-reference in the project code (e.g. Game::PlaceFood, Snake::CheckCollision)
+* The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks (e.g. Audio.h/Audio.cpp)
+* All class data members are explicitly specified as public, protected, or private (e.g. Audio.h/Audio.cpp)
+* The project follows the Resource Acquisition Is Initialization pattern where appropriate, by allocating objects at compile-time, initializing objects when they are declared, and utilizing scope to ensure their automatic destruction.
+  * Objects are allocated on the stack and released when exiting scope (e.g. )
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
@@ -25,6 +37,7 @@ In this project, you can build your own C++ application or extend this Snake gam
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
+* Run on a device with audio to hear the music
 
 ## Basic Build Instructions
 
@@ -36,6 +49,7 @@ In this project, you can build your own C++ application or extend this Snake gam
 ## Acknowledgements
 * `FindSDL2_ttf.cmake` taken from [here](https://github.com/tcbrindle/sdl2-cmake-scripts/blob/master/FindSDL2_ttf.cmake)
 * Instructions from using the above script found [here](https://github.com/tcbrindle/sdl2-cmake-scripts)
+* SDL audio implementation inspired by [this](https://gist.github.com/armornick/3447121)
 * Soundtrack:
 Aggressive Computer Gaming | ENIGMA by Alex-Productions | https://onsound.eu/
 Music promoted by https://www.chosic.com/free-music/all/

@@ -116,7 +116,6 @@ void Game::Run(Controller const& controller, Renderer& renderer,
 }
 
 bool Game::IsGameOver() {
-  //return a;
   return !snakes[0]->alive && !snakes[1]->alive;
 }
 
