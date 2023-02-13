@@ -131,6 +131,11 @@
 				"backtrace" : 2,
 				"fragment" : "SDL2",
 				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lSDL2_ttf",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
