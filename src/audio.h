@@ -10,9 +10,9 @@ class Audio {
 
  private:
   static void AudioCallback(void* userdata, Uint8* stream, int len);
-  inline static Uint8* audio_pos = 0; 
-  inline static Uint32 audio_len = 0;
-  inline static bool running = false;
+  static Uint8* audio_pos; 
+  static Uint32 audio_len;
+  static bool running;
 };
 
 #endif

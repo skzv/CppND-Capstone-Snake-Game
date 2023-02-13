@@ -8,6 +8,10 @@
 #include "SDL.h"
 #include "audio.h"
 
+bool Audio::running;
+Uint8* Audio::audio_pos;
+Uint32 Audio::audio_len;
+
 int main() {
   constexpr std::size_t kFramesPerSecond{ 60 };
   constexpr std::size_t kMsPerFrame{ 1000 / kFramesPerSecond };
