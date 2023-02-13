@@ -2,6 +2,11 @@
 #include "controller.h"
 #include "game.h"
 #include "renderer.h"
+#include <thread>
+#include <chrono>
+#include <mutex>
+#include "SDL.h"
+#include "audio.h"
 
 int main() {
   constexpr std::size_t kFramesPerSecond{ 60 };
@@ -13,12 +18,18 @@ int main() {
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
+
+  std::thread t(Audio::PlayMusic);
+
   Game game(kGridWidth, kGridHeight);
   game.Run(controller, renderer, kMsPerFrame);
   game.GameOver(controller, renderer, kMsPerFrame);
-  std::cout << "keep playing? (y/n)" << std::endl;
-  char a;
-  std::cin >> a;
+
+  Audio::Stop();
+
+  // thread barrier
+  t.join();
+
   std::cout << "Game has terminated successfully!\n";
   std::cout << "Score: " << game.GetScore() << "\n";
   std::cout << "Size: " << game.GetSize() << "\n";

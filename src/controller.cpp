@@ -48,6 +48,7 @@ void Controller::HandleInput(bool& running, std::vector<std::unique_ptr<Snake>>&
         ChangeDirection(*snakes[0], Snake::Direction::kRight,
           Snake::Direction::kLeft);
         break;
+        
         // snake_1
       case SDLK_UP:
         ChangeDirection(*snakes[1], Snake::Direction::kUp,

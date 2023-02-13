@@ -63,6 +63,35 @@ void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) 
   }
 }
 
+void Snake::CheckCollision(Snake& other_snake) {
+  int head_x_cell = static_cast<int>(head_x);
+  int head_y_cell = static_cast<int>(head_y);
+  int other_head_x_cell = static_cast<int>(other_snake.head_x);
+  int other_head_y_cell = static_cast<int>(other_snake.head_y);
+
+  // Check if the head of the other snake has collided with the body of this snake.
+  for (auto const &item : body) {
+    if (other_head_x_cell == item.x && other_head_y_cell == item.y) {
+      alive = false;
+      other_snake.alive = false;
+      return;
+    }
+  }
+  // Check if the head of this snake has collided with the body of the other snake.
+  for (auto const &item : other_snake.body) {
+    if (head_x_cell == item.x && head_y_cell == item.y) {
+      alive = false;
+      other_snake.alive = false;
+      return;
+    }
+  }
+  if (head_x_cell == other_head_x_cell && head_y_cell == other_head_y_cell) {
+      alive = false;
+      other_snake.alive = false;
+      return;
+  }
+}
+
 void Snake::GrowBody() { growing = true; }
 
 // Inefficient method to check if cell is occupied by snake.

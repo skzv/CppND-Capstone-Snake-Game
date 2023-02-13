@@ -68,6 +68,10 @@
         "variant": "cpp",
         "vector": "cpp",
         "algorithm": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "deque": "cpp",
+        "fstream": "cpp",
+        "iomanip": "cpp",
+        "stack": "cpp"
     }
 }

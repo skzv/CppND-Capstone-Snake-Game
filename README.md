@@ -36,6 +36,12 @@ In this project, you can build your own C++ application or extend this Snake gam
 ## Acknowledgements
 * `FindSDL2_ttf.cmake` taken from [here](https://github.com/tcbrindle/sdl2-cmake-scripts/blob/master/FindSDL2_ttf.cmake)
 * Instructions from using the above script found [here](https://github.com/tcbrindle/sdl2-cmake-scripts)
+* Soundtrack:
+Aggressive Computer Gaming | ENIGMA by Alex-Productions | https://onsound.eu/
+Music promoted by https://www.chosic.com/free-music/all/
+Creative Commons CC BY 3.0
+https://creativecommons.org/licenses/by/3.0/
+
 
 ## CC Attribution-ShareAlike 4.0 International
 

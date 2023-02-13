@@ -48,7 +48,7 @@ void Game::GameOver(Controller const& controller, Renderer& renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(GetSize(), frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -59,10 +59,6 @@ void Game::GameOver(Controller const& controller, Renderer& renderer,
     if (frame_duration < target_frame_duration) {
       SDL_Delay(target_frame_duration - frame_duration);
     }
-
-    // if (IsGameOver(frame_count_2 > 120)) {
-    //   running = false;
-    // }
   }
 }
 
@@ -72,9 +68,10 @@ void Game::Run(Controller const& controller, Renderer& renderer,
   Uint32 frame_start;
   Uint32 frame_end;
   Uint32 frame_duration;
+  Uint32 game_over_start;
   int frame_count = 0;
-  int frame_count_2 = 0;
   bool running = true;
+  bool isGameOver = false;
 
   while (running) {
     frame_start = SDL_GetTicks();
@@ -89,12 +86,11 @@ void Game::Run(Controller const& controller, Renderer& renderer,
     // Keep track of how long each loop through the input/update/render cycle
     // takes.
     frame_count++;
-    frame_count_2++;
     frame_duration = frame_end - frame_start;
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(GetSize(), frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -106,15 +102,22 @@ void Game::Run(Controller const& controller, Renderer& renderer,
       SDL_Delay(target_frame_duration - frame_duration);
     }
 
-    if (IsGameOver(frame_count_2 > 120)) {
-      running = false;
+    if (IsGameOver()) {
+      if (!isGameOver) {
+        game_over_start = SDL_GetTicks();
+        isGameOver = true;
+      }
+      // wait 1s before showing Game Over
+      if(SDL_GetTicks() - game_over_start >= 1000) {
+        running = false;
+      }
     }
   }
 }
 
-bool Game::IsGameOver(bool a) {
-  return a;
-  // return !snakes[0]->alive && !snakes[1]->alive;
+bool Game::IsGameOver() {
+  //return a;
+  return !snakes[0]->alive && !snakes[1]->alive;
 }
 
 void Game::PlaceFood(SDL_Point& food) {
@@ -133,6 +136,8 @@ void Game::PlaceFood(SDL_Point& food) {
 }
 
 void Game::Update() {
+  snakes[0]->CheckCollision(*snakes[1]);
+
   for (auto& snake : snakes) {
     if (!snake->alive)
       continue;
@@ -145,7 +150,6 @@ void Game::Update() {
     // Check if there's food over here
     for (auto& single_food : food) {
       if (single_food.x == new_x && single_food.y == new_y) {
-        score++;
         PlaceFood(single_food);
         // Grow snake and increase speed.
         snake->GrowBody();
@@ -155,7 +159,7 @@ void Game::Update() {
   }
 }
 
-int Game::GetScore() const { return score; }
+int Game::GetScore() const { return GetSize(); }
 int Game::GetSize() const {
-  return snakes[0]->size + snakes[1]->size;
+  return std::min(snakes[0]->size, snakes[1]->size);
 }
