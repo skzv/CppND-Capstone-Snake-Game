@@ -12,6 +12,9 @@ https://user-images.githubusercontent.com/11140296/218392847-a9a6b559-c0e3-4b99-
 
 The game is a twist on the classic game of Snake. In this version, there are two snakes, not one. A snake will die when it runs into its own tail or the other snake. The score is the minimum of either snake's size - this encourages you to play with both snakes, not just one.
 
+## Notice to Reviewer
+You will need to install `sudo apt-get install libsdl2-ttf-dev` to run.
+
 ## Rubric Points Addressed
 * The project uses multiple threads in the execution (main.cpp:22)
   * Audio is run in a seperate thread (note - the audio won't play over VNC, but see the video above to hear it in action)
