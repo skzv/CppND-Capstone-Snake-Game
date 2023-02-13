@@ -22,7 +22,7 @@ The game is a twist on the classic game of Snake. In this version, there are two
 * The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks (e.g. Audio.h/Audio.cpp)
 * All class data members are explicitly specified as public, protected, or private (e.g. Audio.h/Audio.cpp)
 * The project follows the Resource Acquisition Is Initialization pattern where appropriate, by allocating objects at compile-time, initializing objects when they are declared, and utilizing scope to ensure their automatic destruction.
-  * Objects are allocated on the stack and released when exiting scope (e.g. )
+  * Objects are allocated on the stack and released when exiting scope (e.g. thread on main.cpp:22)
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
