@@ -23,6 +23,7 @@ The game is a twist on the classic game of Snake. In this version, there are two
 * All class data members are explicitly specified as public, protected, or private (e.g. Audio.h/Audio.cpp)
 * The project follows the Resource Acquisition Is Initialization pattern where appropriate, by allocating objects at compile-time, initializing objects when they are declared, and utilizing scope to ensure their automatic destruction.
   * Objects are allocated on the stack and released when exiting scope (e.g. thread on main.cpp:22)
+* All class members that are set to argument values are initialized through member initialization lists (e.g. Renderer.cpp:8, Snake.cpp:11)
 
 ## Dependencies for Running Locally
 * cmake >= 3.7
