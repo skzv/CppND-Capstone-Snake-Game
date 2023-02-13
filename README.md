@@ -6,6 +6,10 @@ The code for this repo was inspired by [this](https://codereview.stackexchange.c
 
 <img src="2-snake.gif"/>
 
+Tip-> Turn on audio in the video below:
+
+https://user-images.githubusercontent.com/11140296/218392847-a9a6b559-c0e3-4b99-8d68-3e8dce51071a.mp4
+
 The game is a twist on the classic game of Snake. In this version, there are two snakes, not one. A snake will die when it runs into its own tail or the other snake. The score is the minimum of either snake's size - this encourages you to play with both snakes, not just one.
 
 ## Rubric Points Addressed
