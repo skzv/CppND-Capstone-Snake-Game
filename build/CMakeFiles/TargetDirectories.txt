@@ -1,3 +1,0 @@
-/Users/skz/src/udacity/cpp/CppND-Capstone-Snake-Game/build/CMakeFiles/SnakeGame.dir
-/Users/skz/src/udacity/cpp/CppND-Capstone-Snake-Game/build/CMakeFiles/edit_cache.dir
-/Users/skz/src/udacity/cpp/CppND-Capstone-Snake-Game/build/CMakeFiles/rebuild_cache.dir
