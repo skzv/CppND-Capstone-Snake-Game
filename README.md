@@ -14,7 +14,7 @@ The game is a twist on the classic game of Snake. In this version, there are two
 
 ## Rubric Points Addressed
 * The project uses multiple threads in the execution (main.cpp:22)
-  * Audio is run in a seperate thread
+  * Audio is run in a seperate thread (note - the audio won't play over VNC, but see the video above to hear it in action)
 * The project uses smart pointers instead of raw pointers (e.g. game.cpp:13)
   * Snake objects are referenced via unique_ptr
 * For classes with move constructors, the project returns objects of that class by value, and relies on the move constructor, instead of copying the object (e.g. game.cpp:16)
