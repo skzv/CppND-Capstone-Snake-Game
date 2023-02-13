@@ -18,7 +18,7 @@ Game::Game(std::size_t grid_width, std::size_t grid_height)
 
   food.emplace_back(SDL_Point());
   food.emplace_back(SDL_Point());
-  PlaceFood(food);
+  PlaceFood();
 }
 
 void Game::GameOver(Controller const& controller, Renderer& renderer,
