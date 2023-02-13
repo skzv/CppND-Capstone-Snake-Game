@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <SDL.h>
+#include <memory>
 
 Renderer::Renderer(const std::size_t screen_width,
   const std::size_t screen_height,
